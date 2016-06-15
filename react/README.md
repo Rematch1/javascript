@@ -23,7 +23,7 @@
   - 파일당 하나의 컴포넌트 파일만 포함한다.
     - 하지만, 다수의 [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) 들은 파일에 존재해도 된다. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
   - 항상 JSX 구문을 사용한다.
-  - 만약 JSX를 이용해 앱을 초기화중이라면 `React.createElement` 구문을 사용하지 않는다.
+  - 만약 JSX를 이용해 앱을 개발 중이라면 `React.createElement` 구문을 사용하지 않는다.
 
 ## Class vs `React.createClass` vs stateless
 
@@ -47,7 +47,7 @@
     }
     ```
 
-    그리고 만약 소스 안에 state나 refs가 없다면, 일반 클래스 방식보다 일반 함수(화살표 함수가 아님) 방식을 선호하라.:
+    그리고 만약 소스 안에 state나 refs가 없다면, 일반 클래스 방식보다 일반 함수(화살표 함수 아님) 방식을 선호하라.:
 
     ```jsx
     // bad
@@ -88,7 +88,7 @@
     const reservationItem = <ReservationCard />;
     ```
 
-  - **컴포넌트 이름**: 파일 이름과 동일하게 사용한다. 예를들어, `ReservationCard.jsx` 라는 파일 안에는 `ReservationCard` 라는 이름의 컴포넌트가 있어야 한다. 하지만, 폴더 내 루트 컴포넌트의 경우에는, 파일 이름으로 `index.jsx` 를 사용하고, 폴더의 이름을 컴포넌트의 이름으로 사용한다.:
+  - **컴포넌트 이름**: 파일 이름과 동일하게 사용한다. 예를들어, `ReservationCard.jsx` 라는 파일 안에는 `ReservationCard` 라는 이름의 컴포넌트가 있어야 한다. 하지만, 폴더 내 루트 컴포넌트의 경우에는, 파일 이름을 `index.jsx` 로 작성하고, 폴더의 이름을 컴포넌트의 이름으로 작성한다.:
 
     ```jsx
     // bad
@@ -103,7 +103,7 @@
 
 ## 선언
 
-  - 컴포넌트의 이름을 지을 때 `displayName` 속성을 사용하지 않는다. 대신, 참조 값으로 컴포넌트의 이름을 짓는다.
+  - 컴포넌트의 이름을 지을 때 `displayName` 속성을 사용하지 않는다. 대신에 참조 값으로 컴포넌트의 이름을 짓는다.
 
     ```jsx
     // bad
@@ -146,7 +146,7 @@
 
 ## 따옴표
 
-  - JSX 속성값에는 항상 쌍따옴표 (`"`) 를 사용한다, 하지만 다른 모든 자바스크립트에서는 홑따옴표를 사용한다. eslint: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes)
+  - JSX 속성값에는 항상 쌍따옴표 (`"`) 를 사용한다. 하지만 다른 자바스크립트에서는 홑따옴표를 사용한다. eslint: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes)
 
   > 왜? JSX 속성은 [escaped quotes를 가질수 없다.](http://eslint.org/docs/rules/jsx-quotes), 그래서 쌍따옴표는 해당 타입에 쉽게 `"멈춤 or 그만"` 이라는 의미를 심어준다.
   > HTML 속성들도 보통 홑따옴표 대신 쌍따옴표를 사용한다. 그래서 JSX 속성은 이러한 컨벤션을 따라간다.
@@ -167,7 +167,7 @@
 
 ## 띄어쓰기
 
-  - 닫힘 태그에는 항상 한칸짜리 빈 공간을 가진다.
+  - 닫힘 태그에는 항상 한 칸짜리 빈 공간을 가진다.
 
     ```jsx
     // bad
@@ -521,7 +521,7 @@
 
   - `isMounted` 를 사용하면 안 된다. eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
 
-  > 왜? `isMounted` 은 [안티 패턴][anti-pattern]이고, ES6 클래스 문법에 적용할 수 없을 뿐더러, 공식적으로 사라지게 될 예정이다.
+  > 왜? `isMounted` 은 [안티 패턴이고,][anti-pattern] ES6 클래스 문법에 적용할 수 없을 뿐더러, 공식적으로 사라지게 될 예정이다.
 
   [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
 
@@ -531,5 +531,6 @@
 
   - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [JasonBoy/javascript](https://github.com/JasonBoy/javascript/tree/master/react)
   - ![pl](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Poland.png) **Polish**: [pietraszekl/javascript](https://github.com/pietraszekl/javascript/tree/master/react)
+  - ![ko](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png.png) **Korean**: [apple77y/javascript](https://github.com/apple77y/javascript/tree/master/react)
 
 **[⬆ back to top](#table-of-contents)**
