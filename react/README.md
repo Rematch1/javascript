@@ -21,7 +21,7 @@
 ## 기본규칙
 
   - 파일당 하나의 컴포넌트 파일만 포함한다.
-    - 하지만, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
+    - 하지만, 다수의 [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) 들은 파일에 존재해도된다. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
   - 항상 JSX 구문을 사용한다.
   - Do not use `React.createElement` unless you're initializing the app from a file that is not JSX.
 
