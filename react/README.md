@@ -27,7 +27,7 @@
 
 ## Class vs `React.createClass` vs stateless
 
-  - 만약 소스 안에 state나 refs가 있고, 믹스인을 사용해야 하는 특별히 좋은 이유가 있지 않는 한, `React.createClass`보다는 `class extends React.Component`를 선호하라. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
+  - 만약 소스 안에 state나 refs가 있으면, `React.createClass` 보다는 `class extends React.Component` 를 선호하라. 믹스인을 사용해야 하는 특별히 좋은 이유가 있으면 그렇지 않아도 된다. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
 
     ```jsx
     // bad
@@ -57,7 +57,7 @@
       }
     }
 
-    // bad (relying on function name inference is discouraged)
+    // bad (익명함수의 형태이므로 함수의 이름을 추론해야하기 때문에 비추천)
     const Listing = ({ hello }) => (
       <div>{hello}</div>
     );
@@ -88,7 +88,7 @@
     const reservationItem = <ReservationCard />;
     ```
 
-  - **컴포넌트 이름**: 파일 이름과 동일하게 사용한다. 예를들어, `ReservationCard.jsx` 라는 파일 안에는 `ReservationCard`라는 이름의 컴포넌트가 있어야 한다. 하지만, 폴더 내 루트 컴포넌트의 경우에는, 파일 이름으로 `index.jsx`를 사용하고, 폴더의 이름을 컴포넌트의 이름으로 사용한다.:
+  - **컴포넌트 이름**: 파일 이름과 동일하게 사용한다. 예를들어, `ReservationCard.jsx` 라는 파일 안에는 `ReservationCard` 라는 이름의 컴포넌트가 있어야 한다. 하지만, 폴더 내 루트 컴포넌트의 경우에는, 파일 이름으로 `index.jsx` 를 사용하고, 폴더의 이름을 컴포넌트의 이름으로 사용한다.:
 
     ```jsx
     // bad
@@ -196,7 +196,7 @@
 
 ## Props
 
-  - Always use camelCase for prop names.
+  - 속성의 이름은 항상 카멜케이스를 사용한다.
 
     ```jsx
     // bad
@@ -212,7 +212,7 @@
     />
     ```
 
-  - Omit the value of the prop when it is explicitly `true`. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
+  - 만약 속성 값이 명확한 `true` 값이라면 생략한다. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
 
     ```jsx
     // bad
@@ -226,7 +226,7 @@
     />
     ```
 
-  - Always include an `alt` prop on `<img>` tags. If the image is presentational, `alt` can be an empty string or the `<img>` must have `role="presentation"`. eslint: [`jsx-a11y/img-has-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-has-alt.md)
+  - `<img>` 태그에는 항상 `alt` 속성을 작성한다. 만약 이미지가 표현 가능하다면, `alt` 값은 빈 문자열이 될 수 있거나 `<img>`는 반드시 `role="presentation"` 속성을 가지고 있어야 한다. eslint: [`jsx-a11y/img-has-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-has-alt.md)
 
     ```jsx
     // bad
@@ -242,9 +242,9 @@
     <img src="hello.jpg" role="presentation" />
     ```
 
-  - Do not use words like "image", "photo", or "picture" in `<img>` `alt` props. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
+  - `<img>` 태그의 `alt` 속성 값으로 "image", "photo", "picture" 와 같은 단어를 사용하면 안 된다. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
 
-  > Why? Screenreaders already announce `img` elements as images, so there is no need to include this information in the alt text.
+  > 왜? 스크린리더는 이미 `img` 태그를 이미지로 인지하고 있기 때문에, alt 속성 값에 반복으로 해당 정보를 포함할 필요가 없다.
 
     ```jsx
     // bad
@@ -254,7 +254,7 @@
     <img src="hello.jpg" alt="Me waving hello" />
     ```
 
-  - Use only valid, non-abstract [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
+  - role 속성 값으로는 검증이 가능하고, 추상적이지 않은 값을 사용하라. [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
     ```jsx
     // bad - not an ARIA role
@@ -267,9 +267,9 @@
     <div role="button" />
     ```
 
-  - Do not use `accessKey` on elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
+  - 엘리먼트에 `accessKey` 속성을 사용하면 안 된다. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
 
-  > Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.
+  > 왜? 키보드 단축값을 사용하는 스크린 리더 유저와 일반 키보드 유저간의 일관성이 없어져서 접근성을 복잡하게 만들기 때문이다.
 
   ```jsx
   // bad
@@ -279,7 +279,7 @@
   <div />
   ```
 
-  - Avoid using an array index as `key` prop, prefer a unique ID. ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
+  - 배열의 인덱스를 `key` 속성 값으로 사용하는 것을 피하고, 유니크한 ID 값을 사용하라. ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
 
   ```jsx
   // bad
