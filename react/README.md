@@ -21,7 +21,7 @@
 ## 기본규칙
 
   - 파일당 하나의 컴포넌트 파일만 포함한다.
-    - 하지만, 다수의 [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) 들은 파일에 존재해도된다. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
+    - 하지만, 다수의 [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) 들은 파일에 존재해도 된다. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
   - 항상 JSX 구문을 사용한다.
   - 만약 JSX를 이용해 앱을 초기화중이라면 `React.createElement` 구문을 사용하지 않는다.
 
@@ -101,9 +101,9 @@
     import Footer from './Footer';
     ```
 
-## Declaration
+## 선언
 
-  - Do not use `displayName` for naming components. Instead, name the component by reference.
+  - 컴포넌트의 이름을 지을 때 `displayName` 속성을 사용하지 않는다. 대신, 참조 값으로 컴포넌트의 이름을 짓는다.
 
     ```jsx
     // bad
@@ -144,9 +144,9 @@
     </Foo>
     ```
 
-## Quotes
+## 따옴표
 
-  - Always use double quotes (`"`) for JSX attributes, but single quotes for all other JS. eslint: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes)
+  - JSX 속성값에는 항상 쌍따옴표 (`"`) 를 사용한다, 하지만 다른 JS에는 홑따옴표를 사용한다. eslint: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes)
 
   > Why? JSX attributes [can't contain escaped quotes](http://eslint.org/docs/rules/jsx-quotes), so double quotes make conjunctions like `"don't"` easier to type.
   > Regular HTML attributes also typically use double quotes instead of single, so JSX attributes mirror this convention.
