@@ -1,12 +1,12 @@
 # Airbnb React/JSX Style Guide
 
-*A mostly reasonable approach to React and JSX*
+*React와 JSX에 대한 가장 합리적인 접근방법*
 
 ## 목차
 
   1. [기본규칙](#기본규칙)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
-  1. [Naming](#naming)
+  1. [명명규칙](#명명규칙)
   1. [Declaration](#declaration)
   1. [Alignment](#alignment)
   1. [Quotes](#quotes)
@@ -23,7 +23,7 @@
   - 파일당 하나의 컴포넌트 파일만 포함한다.
     - 하지만, 다수의 [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) 들은 파일에 존재해도된다. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
   - 항상 JSX 구문을 사용한다.
-  - Do not use `React.createElement` unless you're initializing the app from a file that is not JSX.
+  - 만약 JSX를 이용해 앱을 초기화중이라면 `React.createElement` 구문을 사용하지 않는다.
 
 ## Class vs `React.createClass` vs stateless
 
@@ -68,11 +68,11 @@
     }
     ```
 
-## Naming
+## 명명규칙
 
-  - **Extensions**: Use `.jsx` extension for React components.
-  - **Filename**: Use PascalCase for filenames. E.g., `ReservationCard.jsx`.
-  - **Reference Naming**: Use PascalCase for React components and camelCase for their instances. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
+  - **확장자**: 리엑트 컴포넌트 파일에는 `.jsx` 확장자를 사용한다.
+  - **파일 이름**: 파스칼 형식의  이름을 사용한다. E.g., `ReservationCard.jsx`.
+  - **참조 값 이름**: 인스턴스는 카멜 형식으로, 리엑트 컴포넌트는 파스칼 형식의 이름을 사용한다. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
     ```jsx
     // bad
@@ -88,7 +88,7 @@
     const reservationItem = <ReservationCard />;
     ```
 
-  - **Component Naming**: Use the filename as the component name. For example, `ReservationCard.jsx` should have a reference name of `ReservationCard`. However, for root components of a directory, use `index.jsx` as the filename and use the directory name as the component name:
+  - **컴포넌트 이름**: 파일 이름과 동일하게 사용한다. 예를들어, `ReservationCard.jsx` 라는 파일 안에는 `ReservationCard`라는 이름의 컴포넌트가 있어야 한다. 하지만, 폴더 내 루트 컴포넌트의 경우에는, 파일 이름으로 `index.jsx`를 사용하고, 폴더의 이름을 컴포넌트의 이름으로 사용한다.:
 
     ```jsx
     // bad
