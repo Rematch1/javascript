@@ -4,7 +4,7 @@
 
 ## 목차
 
-  1. [기본규칙](#basic-rules)
+  1. [기본규칙](#기본규칙)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
   1. [Naming](#naming)
   1. [Declaration](#declaration)
