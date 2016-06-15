@@ -7,10 +7,10 @@
   1. [기본규칙](#기본규칙)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
   1. [명명규칙](#명명규칙)
-  1. [Declaration](#declaration)
-  1. [Alignment](#alignment)
-  1. [Quotes](#quotes)
-  1. [Spacing](#spacing)
+  1. [선언](#선언)
+  1. [정렬](#정렬)
+  1. [따옴표](#따옴표)
+  1. [띄어쓰기](#띄어쓰기)
   1. [Props](#props)
   1. [Parentheses](#parentheses)
   1. [Tags](#tags)
@@ -27,7 +27,7 @@
 
 ## Class vs `React.createClass` vs stateless
 
-  - If you have internal state and/or refs, prefer `class extends React.Component` over `React.createClass` unless you have a very good reason to use mixins. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
+  - 만약 소스 내부에 state나 refs가 있고, 믹스인을 사용해야하는 아주 특별히 좋은 이유가 있지 않는 한, `React.createClass`보다는 `class extends React.Component`를 선호하라. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
 
     ```jsx
     // bad
@@ -117,9 +117,9 @@
     }
     ```
 
-## Alignment
+## 정렬
 
-  - Follow these alignment styles for JSX syntax. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - JSX 구문을 위해서는 아래의 정렬 방식을 따른다. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
     ```jsx
     // bad
@@ -132,10 +132,10 @@
       anotherSuperLongParam="baz"
     />
 
-    // if props fit in one line then keep it on the same line
+    // 만약 props가 하나면 같은 줄에 둔다.
     <Foo bar="bar" />
 
-    // children get indented normally
+    // 자식 컴포넌트는 보통 들여쓴다.
     <Foo
       superLongParam="bar"
       anotherSuperLongParam="baz"
@@ -146,10 +146,10 @@
 
 ## 따옴표
 
-  - JSX 속성값에는 항상 쌍따옴표 (`"`) 를 사용한다, 하지만 다른 JS에는 홑따옴표를 사용한다. eslint: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes)
+  - JSX 속성값에는 항상 쌍따옴표 (`"`) 를 사용한다, 하지만 다른 모든 자바스크립트에서는 홑따옴표를 사용한다. eslint: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes)
 
-  > Why? JSX attributes [can't contain escaped quotes](http://eslint.org/docs/rules/jsx-quotes), so double quotes make conjunctions like `"don't"` easier to type.
-  > Regular HTML attributes also typically use double quotes instead of single, so JSX attributes mirror this convention.
+  > 왜? JSX 속성은 [escaped quotes를 가질수 없다.](http://eslint.org/docs/rules/jsx-quotes), 그래서 쌍따옴표는 해당 타입에 쉽게 `"멈춤 or 그만"` 이라는 의미를 심어준다.
+  > HTML 속성들도 보통 홑따옴표 대신 쌍따옴표를 사용한다. 그래서 JSX 속성은 이러한 컨벤션을 따라간다.
 
     ```jsx
     // bad
@@ -165,9 +165,9 @@
     <Foo style={{ left: '20px' }} />
     ```
 
-## Spacing
+## 띄어쓰기
 
-  - Always include a single space in your self-closing tag.
+  - 닫힘 태그에는 항상 한칸짜리 빈 공간을 가진다.
 
     ```jsx
     // bad
@@ -184,7 +184,7 @@
     <Foo />
     ```
 
-  - Do not pad JSX curly braces with spaces. eslint: [`react/jsx-curly-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)
+  - JSX 중괄호에 빈 공간을 덧대지 않는다. eslint: [`react/jsx-curly-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)
 
     ```jsx
     // bad
