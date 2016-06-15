@@ -27,7 +27,7 @@
 
 ## Class vs `React.createClass` vs stateless
 
-  - 만약 소스 내부에 state나 refs가 있고, 믹스인을 사용해야하는 아주 특별히 좋은 이유가 있지 않는 한, `React.createClass`보다는 `class extends React.Component`를 선호하라. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
+  - 만약 소스 안에 state나 refs가 있고, 믹스인을 사용해야 하는 특별히 좋은 이유가 있지 않는 한, `React.createClass`보다는 `class extends React.Component`를 선호하라. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
 
     ```jsx
     // bad
@@ -47,7 +47,7 @@
     }
     ```
 
-    And if you don't have state or refs, prefer normal functions (not arrow functions) over classes:
+    그리고 만약 소스 안에 state나 refs가 없다면, 일반 클래스 방식보다 일반 함수(화살표 함수가 아님) 방식을 선호하라.:
 
     ```jsx
     // bad
