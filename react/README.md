@@ -90,7 +90,7 @@
 
   - **컴포넌트 이름**: 파일 이름과 동일하게 사용한다. 예를들어, `ReservationCard.jsx` 라는 파일 안에는 `ReservationCard` 라는 이름의 컴포넌트가 있어야 한다. 하지만, 폴더 내 루트 컴포넌트의 경우에는, 파일 이름을 `index.jsx` 로 작성하고, 폴더의 이름을 컴포넌트의 이름으로 작성한다.:
 
-    ```jsx
+    ``` jsx
     // bad
     import Footer from './Footer/Footer';
 
@@ -100,6 +100,29 @@
     // good
     import Footer from './Footer';
     ```
+
+  - **상위 컴포넌트 이름**: 상위 컴포넌트의 displayName 속성 값과 하위 컴포넌트의 displayName 속성 값에 활용하여 새롬게 만들어진 컴포넌트의 이름을 만든다. 예를들어, 상위 컴포넌트 withFoo()에서, Bar 라는 하위 컴포넌트가 인자로 넘어왔을 때, 생성되는 컴포넌트의 displayName 속성 값은 withFoo(Bar)이 된다.
+
+  > 이유? 컴포넌트의 displayName 속성은 개발자 도구나 에러 메세지를 확인하기 위해 사용된다. 이 값을 확실하게 넣어줘야 사람들이 이러한 문제를 겪거나 컴포넌트 간의 관계 파악을 할 때 도움이 된다.
+  
+  ``` jsx
+  // bad
+  export default function withFoo(Component) {
+    return function WithFoo(props) {
+      return <Component {...props} foo />;
+    }
+  }
+
+  // good
+  export default function withFoo(Component) {
+    function WithFoo(props) {
+      return <Component {...props} foo />;
+    }
+
+    WithFoo.displayName = `withFoo(${Component.displayName || Component.name}`;
+    return WithFoo;
+  }
+  ```
 
 ## 선언
 
