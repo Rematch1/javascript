@@ -6,6 +6,7 @@
 
   1. [기본규칙](#기본규칙)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
+  1. [믹스인](#믹스인)
   1. [명명규칙](#명명규칙)
   1. [선언](#선언)
   1. [정렬](#정렬)
@@ -28,7 +29,7 @@
 
 ## Class vs `React.createClass` vs stateless
 
-  - 만약 소스 안에 state나 refs가 있으면, `React.createClass` 보다는 `class extends React.Component` 를 선호하라. 믹스인을 사용해야 하는 특별히 좋은 이유가 있으면 그렇지 않아도 된다. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
+  - 만약 소스 안에 state나 refs가 있으면, `React.createClass` 보다는 `class extends React.Component` 를 선호하라. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
 
     ```jsx
     // bad
@@ -68,6 +69,11 @@
       return <div>{hello}</div>;
     }
     ```
+
+## 믹스인
+
+  - [믹스인을 사용하면 안 된다.](https://reactjs.org/blog/2016/07/13/mixins-considered-harmful.html)
+  > 이유: 믹스인은 묵시적인 의존성을 야기하고, 이름 충돌을 야기하며 코드가 더 복잡해질 수 있다. 믹스인을 사용하는 대부분의 경우는 컴포넌트를 더 나은 방법으로 리팩토링하거나 고차 컴포넌트로로 바꾸거나 혹은 유틸리티 모듈로 해결할 수 있다.
 
 ## 명명규칙
 
