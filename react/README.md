@@ -6,7 +6,7 @@
 
   1. [기본규칙](#기본규칙)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
-  1. [믹스인](#믹스인)
+  1. [믹스인](#믹스인)
   1. [명명규칙](#명명규칙)
   1. [선언](#선언)
   1. [정렬](#정렬)
