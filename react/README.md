@@ -184,19 +184,19 @@
   > 왜? JSX 속성은 [escaped quotes를 가질수 없다.](http://eslint.org/docs/rules/jsx-quotes), 그래서 쌍따옴표는 해당 타입에 쉽게 `"멈춤 or 그만"` 이라는 의미를 심어준다.
   > HTML 속성들도 보통 홑따옴표 대신 쌍따옴표를 사용한다. 그래서 JSX 속성은 이러한 컨벤션을 따라간다.
 
-    ```jsx
-    // bad
-    <Foo bar='bar' />
+  ```jsx
+  // bad
+  <Foo bar='bar' />
 
-    // good
-    <Foo bar="bar" />
+  // good
+  <Foo bar="bar" />
 
-    // bad
-    <Foo style={{ left: "20px" }} />
+  // bad
+  <Foo style={{ left: "20px" }} />
 
-    // good
-    <Foo style={{ left: '20px' }} />
-    ```
+  // good
+  <Foo style={{ left: '20px' }} />
+  ```
 
 ## 띄어쓰기
 
