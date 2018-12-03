@@ -278,14 +278,13 @@
   - `<img>` 태그의 `alt` 속성 값으로 "image", "photo", "picture" 와 같은 단어를 사용하면 안 된다. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
 
   > 왜? 스크린리더는 이미 `img` 태그를 이미지로 인지하고 있기 때문에, alt 속성 값에 반복으로 해당 정보를 포함할 필요가 없다.
-
-    ```jsx
-    // bad
-    <img src="hello.jpg" alt="Picture of me waving hello" />
-
-    // good
-    <img src="hello.jpg" alt="Me waving hello" />
-    ```
+  ```jsx
+  // bad
+  <img src="hello.jpg" alt="Picture of me waving hello" />
+    
+  // good
+  <img src="hello.jpg" alt="Me waving hello" />
+  ```
 
   - role 속성 값으로는 검증이 가능하고, 추상적이지 않은 값을 사용하라. [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
@@ -425,36 +424,35 @@
   - render 메소드에 사용되는 이벤트 핸들러는 생성자에 바인드 해라. eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
 
   > 왜? render 메소드 내에서 bind를 사용하게게 될 경우에는 새로운 렌더링마다 새로운 함수가 생성되기 때문이다.
-
-    ```jsx
-    // bad
-    class extends React.Component {
-      onClickDiv() {
-        // do stuff
-      }
-
-      render() {
-        return <div onClick={this.onClickDiv.bind(this)} />
-      }
+  ```jsx
+  // bad
+  class extends React.Component {
+    onClickDiv() {
+      // do stuff
     }
 
-    // good
-    class extends React.Component {
-      constructor(props) {
-        super(props);
-
-        this.onClickDiv = this.onClickDiv.bind(this);
-      }
-
-      onClickDiv() {
-        // do stuff
-      }
-
-      render() {
-        return <div onClick={this.onClickDiv} />
-      }
+    render() {
+      return <div onClick={this.onClickDiv.bind(this)} />
     }
-    ```
+  }
+
+  // good
+  class extends React.Component {
+    constructor(props) {
+      super(props);
+      
+      this.onClickDiv = this.onClickDiv.bind(this);
+    }
+
+    onClickDiv() {
+      // do stuff
+    }
+
+    render() {
+      return <div onClick={this.onClickDiv} />
+    }
+  }
+  ```
 
   - 리엑트 컴포넌트의 내부 메소드를 위해 언더바 문자를 사용하면 안 된다.
 
